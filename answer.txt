@@ -1,1 +1,25 @@
-Stuff will go here.
+1.
+=================================================================================
+When analyzing the runtimes for files of various sizes, a clear trend
+begins to develop. Below is an tabloid showcasing the size of a file and
+the associated runtime of the client executable.
+
+1. (File Size 207372 Bytes, Runtime 0.86s)
+2. (File Size 631506 Bytes, Runtime 0.93s)
+3. (File Size 1044577 Bytes, Runtime 1.20s)
+4. (File Size 3977712 Bytes, Runtime 2.60s)
+
+A trend appears to develop. The larger the file size, the longer the runtime.
+This makes sense, as the primary mechanism of this program is a loop that 
+executes a number of times based on file size. Thus, the big-O of this program is
+O(n), where n is the number of file messages that must be made. Bigger files 
+will require more file messages, thus why file 4 took so much longer than file 1.
+
+
+2.
+=================================================================================
+The main bottleneck behind how quickly files can transfer is the size of the
+-m flag. The value of m is the cap for how large file messages can be, therefore
+causing more iterations for lower m values. This can be demonstrated by running 
+the program with an -m flag of 1, and an -m flag of 200. The latter runs significantly
+faster.
