@@ -21,5 +21,5 @@ will require more file messages, thus why file 4 took so much longer than file 1
 The main bottleneck behind how quickly files can transfer is the size of the
 -m flag. The value of m is the cap for how large file messages can be, therefore
 causing more iterations for lower m values. This can be demonstrated by running 
-the program with an -m flag of 1, and an -m flag of 200. The latter runs significantly
+the program with an -m flag of 100, and an -m flag of 3000. The latter runs significantly
 faster.
